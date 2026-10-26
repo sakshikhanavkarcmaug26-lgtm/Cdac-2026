@@ -1,0 +1,338 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNova - Employee Portal</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #243b36;
+            background: linear-gradient(135deg, #dceee7, #a7cec0);
+            min-height: 100vh;
+            padding: 35px 15px;
+        }
+
+        .form-card {
+            width: 100%;
+            max-width: 450px;
+            margin: 45px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(23, 63, 58, 0.15);
+        }
+
+        h1 {
+            color: #173f3a;
+            margin-top: 12px;
+        }
+
+        .subtitle {
+            color: #657873;
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #a5c5ba;
+            border-radius: 6px;
+            font-size: 15px;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: 2px solid #a5c5ba;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        .radio-option,
+        .checkbox-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 10px 0;
+            text-align: left;
+        }
+
+        .radio-option input,
+        .checkbox-option input {
+            width: auto;
+        }
+
+        .radio-option label,
+        .checkbox-option label {
+            display: inline;
+            margin: 0;
+            font-weight: normal;
+        }
+
+        .main-button {
+            width: 100%;
+            padding: 13px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 7px;
+            background-color: #267568;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .main-button:hover {
+            background-color: #173f3a;
+        }
+
+        .switch-link {
+            color: #267568;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .switch-link:hover {
+            text-decoration: underline;
+        }
+
+        .switch-text {
+            color: #657873;
+            margin-top: 20px;
+        }
+
+        .form-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .form-buttons button {
+            flex: 1;
+        }
+
+        .reset-button {
+            padding: 13px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 7px;
+            background-color: #e1e9e5;
+            color: #243b36;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 500px) {
+            .form-card {
+                padding: 22px;
+                margin: 15px auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- LOGIN FORM -->
+    <div class="form-card" id="login-section">
+        <h1>TechNova</h1>
+        <p class="subtitle">Employee Portal</p>
+
+        <form action="#" method="get">
+            <div class="form-group">
+                <input type="text" name="username"
+                       placeholder="Enter username"
+                       aria-label="Username" required>
+            </div>
+
+            <div class="form-group">
+                <input type="password" name="password"
+                       placeholder="Enter password"
+                       aria-label="Password" required>
+            </div>
+
+            <button type="submit" class="main-button">Login</button>
+        </form>
+
+        <p class="switch-text">
+            Need an account?
+            <a class="switch-link" onclick="showSignup()">Sign Up</a>
+        </p>
+    </div>
+
+    <!-- SIGNUP FORM: SAME HTML PAGE -->
+    <div class="form-card hidden" id="signup-section">
+        <h1>Create Account</h1>
+        <p class="subtitle">TechNova Employee Registration</p>
+
+        <form action="#" method="post" enctype="multipart/form-data">
+
+            <div class="form-group">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName"
+                       placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Official Email:</label>
+                <input type="email" id="email" name="email"
+                       placeholder="Enter official email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Temporary Password:</label>
+                <input type="password" id="password" name="password"
+                       placeholder="Enter temporary password" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+
+            <div class="form-group">
+                <label for="joiningDate">Joining Date:</label>
+                <input type="date" id="joiningDate" name="joiningDate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="orientation">Orientation Slot:</label>
+                <input type="datetime-local" id="orientation"
+                       name="orientation" required>
+            </div>
+
+            <div class="form-group">
+                <label for="reportingTime">Reporting Time on Day One:</label>
+                <input type="time" id="reportingTime"
+                       name="reportingTime" required>
+            </div>
+
+            <div class="form-group">
+                <label>Gender:</label>
+
+                <div class="radio-option">
+                    <input type="radio" id="male" name="gender"
+                           value="Male" required>
+                    <label for="male">Male</label>
+                </div>
+
+                <div class="radio-option">
+                    <input type="radio" id="female" name="gender"
+                           value="Female">
+                    <label for="female">Female</label>
+                </div>
+
+                <div class="radio-option">
+                    <input type="radio" id="other" name="gender"
+                           value="Other">
+                    <label for="other">Other</label>
+                </div>
+
+                <div class="radio-option">
+                    <input type="radio" id="preferNot" name="gender"
+                           value="Prefer not to say">
+                    <label for="preferNot">Prefer not to say</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="qualification">Highest Qualification:</label>
+                <select id="qualification" name="qualification" required>
+                    <option value="">Select qualification</option>
+                    <option value="Diploma">Diploma</option>
+                    <option value="Bachelor's Degree">Bachelor's Degree</option>
+                    <option value="Master's Degree">Master's Degree</option>
+                    <option value="PhD">PhD</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="department">Department:</label>
+                <select id="department" name="department" required>
+                    <option value="">Select department</option>
+                    <option value="Engineering">Engineering</option>
+                    <option value="Human Resources">Human Resources</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Design">Design</option>
+                    <option value="Operations">Operations</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Current Address:</label>
+                <textarea id="address" name="address" rows="3"
+                          placeholder="Enter your current address"
+                          required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="document">Passport Photo or Resume:</label>
+                <input type="file" id="document" name="document"
+                       accept="image/*,.pdf,.doc,.docx" required>
+            </div>
+
+            <div class="checkbox-option">
+                <input type="checkbox" id="declaration"
+                       name="declaration" value="accepted" required>
+                <label for="declaration">
+                    I declare that the information provided is correct.
+                </label>
+            </div>
+
+            <div class="form-buttons">
+                <button type="submit" class="main-button">Sign Up</button>
+                <button type="reset" class="reset-button">Reset</button>
+            </div>
+        </form>
+
+        <p class="switch-text">
+            Already have an account?
+            <a class="switch-link" onclick="showLogin()">Back to Login</a>
+        </p>
+    </div>
+
+    <script>
+        function showSignup() {
+            document.getElementById("login-section").classList.add("hidden");
+            document.getElementById("signup-section").classList.remove("hidden");
+        }
+
+        function showLogin() {
+            document.getElementById("signup-section").classList.add("hidden");
+            document.getElementById("login-section").classList.remove("hidden");
+        }
+    </script>
+
+</body>
+</html>
