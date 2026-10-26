@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNova - Employee Directory</title>
+
+    <style>
+        /* Common styles for the TechNova HR Portal */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #243b36;
+            background-color: #f3f7f5;
+        }
+
+        .page-heading {
+            text-align: center;
+            color: #173f3a;
+            margin: 30px 15px;
+        }
+
+        /* DIRECTORY PAGE */
+
+        .table-container {
+            width: 92%;
+            max-width: 1100px;
+            margin: 30px auto;
+            overflow-x: auto;
+        }
+
+        .employee-table {
+            width: 100%;
+            background-color: white;
+            border: 1px solid #a5c5ba;
+            border-collapse: separate;
+            border-spacing: 3px;
+        }
+
+        .employee-table th,
+        .employee-table td {
+            padding: 12px;
+            border: 1px solid #c9d9d2;
+            text-align: left;
+        }
+
+        .employee-table th {
+            background-color: #267568;
+            color: white;
+        }
+
+        .employee-table tbody tr:nth-child(even) {
+            background-color: #eaf3ef;
+        }
+
+        .employee-table tbody tr:hover {
+            background-color: #d8ebe3;
+        }
+
+        .employee-total {
+            text-align: center;
+            font-weight: bold;
+            margin: 25px;
+        }
+
+        /* Responsive design */
+
+        @media (max-width: 600px) {
+            .table-container {
+                width: 95%;
+            }
+
+            .employee-table th,
+            .employee-table td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="page-heading">Employee Directory</h1>
+
+    <div class="table-container">
+        <table class="employee-table">
+            <thead>
+                <tr>
+                    <th>Emp ID</th>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>TN101</td>
+                    <td>Aarav Mehta</td>
+                    <td>Engineering</td>
+                    <td>aarav.mehta@example.com</td>
+                    <td>9000000001</td>
+                </tr>
+                <tr>
+                    <td>TN102</td>
+                    <td>Diya Shah</td>
+                    <td>Human Resources</td>
+                    <td>diya.shah@example.com</td>
+                    <td>9000000002</td>
+                </tr>
+                <tr>
+                    <td>TN103</td>
+                    <td>Kabir Rao</td>
+                    <td>Marketing</td>
+                    <td>kabir.rao@example.com</td>
+                    <td>9000000003</td>
+                </tr>
+                <tr>
+                    <td>TN104</td>
+                    <td>Anaya Joshi</td>
+                    <td>Finance</td>
+                    <td>anaya.joshi@example.com</td>
+                    <td>9000000004</td>
+                </tr>
+                <tr>
+                    <td>TN105</td>
+                    <td>Reyansh Patil</td>
+                    <td>Design</td>
+                    <td>reyansh.patil@example.com</td>
+                    <td>9000000005</td>
+                </tr>
+                <tr>
+                    <td>TN106</td>
+                    <td>Ira Desai</td>
+                    <td>Operations</td>
+                    <td>ira.desai@example.com</td>
+                    <td>9000000006</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p class="employee-total">
+        Total number of employees: 6
+    </p>
+
+</body>
+</html>
